@@ -44,7 +44,7 @@ int second() {
             numberOfWords++;
         }
     }
-    printf("%d", numberOfWords);
+    printf("%d \n", numberOfWords);
 
     int isCycleContinue;
     char words[numberOfWords][100];
@@ -137,6 +137,7 @@ int third() {
     } else {
         printf("Слово не палиндом :C");
     }
+    return 0;
 }
 
 //Ввести строку и если длина кратна 4, то поменять местами первую часть строки и вторую
@@ -180,6 +181,7 @@ int fifth() {
         printf("String should be multiple of two!");
     }
     printf("%s", string);
+    return 0;
 }
 
 int main() {
