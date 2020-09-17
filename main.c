@@ -11,15 +11,15 @@ int first() {
     printf("Input the line here: ");
     scanf("%s", userString);
     length = strlen(userString);
-    if (length % 2 > 0) {
-        userString[0] = (char) "\0";
-        userString[1] = (char) "\0";
-        userString[length-1] = (char) "\0";
-        userString[length] = (char) "\0";
-        for (int i = 0; i < length; i++) {
-            if ((char *) userString[i] != "\0") {
-                printf("%c", userString[i]);
-            }
+    printf("Length = %d \n", length);
+    if (length % 2 == 0) {
+        userString[0] = (char) "0";
+        userString[1] = (char) "0";
+        userString[length-1] = (char) "0";
+        userString[length] = (char) "0";
+        for (int i = 2; i < length - 2; i++) {
+            //printf("CYCLE!!");
+            printf("%c", userString[i]);
         }
         printf("\n");
     }
@@ -28,12 +28,12 @@ int first() {
 int main() {
     int choose;
     printf("1 / 2: ");
-    scanf("%d\n", &choose);
-    /*if (choose == 1) {
+    scanf("%d", &choose);
+    //getchar();
+    if (choose == 1) {
         first();
     } else {
         printf("Input Error!");
-    }*/
-    first();
+    }
     return 0;
 }
