@@ -40,7 +40,7 @@ int second() {
     printf("%d \n", length);
     int numberOfWords = 1;
     for (int i = 0; i < length; i++) {
-        if (string[i] == "_") {
+        if ((char *) string[i] == "_") {
             numberOfWords++;
         }
     }
@@ -184,9 +184,33 @@ int fifth() {
     return 0;
 }
 
+//Ввести с клавиатуры строку. Посчитать число вхождений символов в строку
+//КАРАБАС_БАРАБАС: А6Б3К1Р2С2
+int sixth() {
+    char string[100];
+    printf("Input line here (6): ");
+    scanf(" %s", string);
+
+    int counter;
+    int length = strlen(string);
+    printf("%d \n", length);
+    for (char i = 'a'; i <= 'z'; i++) {
+        counter = 0;
+        for (int j = 0; j < length; j++) {
+            if (string[j] == i) {
+                counter++;
+            }
+        }
+        if (counter > 0) {
+            printf("%c", i);
+            printf("%d", counter);
+        }
+    }
+}
+
 int main() {
     int choose;
-    printf("1 / 2 / 3 / 4 / 5: ");
+    printf("1 / 2 / 3 / 4 / 5 / 6: ");
     scanf("%d", &choose);
     if (choose == 1) {
         first();
@@ -198,6 +222,8 @@ int main() {
         fourth();
     } else if (choose == 5) {
         fifth();
+    } else if (choose == 6) {
+        sixth();
     } else {
         printf("Input Error!");
     }
