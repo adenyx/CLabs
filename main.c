@@ -208,9 +208,45 @@ int sixth() {
     }
 }
 
+int second1() {
+    char string[100];
+    char newString[100];
+    char newChars[100];
+    char preString[100];
+    printf("Input line here (7): ");
+    scanf(" %s", string);
+    printf("Input pre-line here: ");
+    scanf(" %s", preString);
+    printf("Input new-line here: ");
+    scanf(" %s", newChars);
+
+    int lengthStr = strlen(string);
+    int lengthPreStr = strlen(preString);
+    int k = 0;
+    int counter = 0;
+
+    for (int i = 0; i < lengthStr; i++) {
+        if (string[i] == preString[0] && string[i+1] == preString[1]) {
+            counter++;
+            for (int j = 0; j < lengthPreStr; j++) {
+                newString[k] = newChars[j];
+                printf("%c", newString[k]);
+                k++;
+            }
+            printf("%d", counter);
+            i++;
+        } else {
+            newString[k] = string[i];
+            printf("%c", newString[k]);
+            k++;
+        }
+    }
+}
+
+
 int main() {
     int choose;
-    printf("1 / 2 / 3 / 4 / 5 / 6: ");
+    printf("1 / 2 / 3 / 4 / 5 / 6 / 21: ");
     scanf("%d", &choose);
     if (choose == 1) {
         first();
@@ -224,6 +260,8 @@ int main() {
         fifth();
     } else if (choose == 6) {
         sixth();
+    } else if (choose == 21) {
+        second1();
     } else {
         printf("Input Error!");
     }
